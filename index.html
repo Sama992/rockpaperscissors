@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const choice = ['rock','paper','scissors'];
+
+let startGame = () => {
+
+    let humanChoice = prompt('Choose rock, paper or scissors');
+    comparision(humanChoice);
+    
+}
+
+let comparision = (humanChoice) => {
+
+    let computerOption = choice[Math.floor(Math.random()*3)];
+    
+
+    
+    hlower = humanChoice.toLowerCase();
+    clower = computerOption.toLowerCase();
+    alert(`Computer chooses ${computerOption}`);
+    if ((hlower == 'rock' && clower == 'scissors') 
+        || (hlower == 'paper' && clower == 'rock')
+        || (hlower == 'scissors' && clower == 'paper') ) {
+            
+            console.log('You win');
+
+        } else if (hlower == clower) {
+
+            console.log('Its a draw');
+        } else {
+            console.log('You lose');
+        }
+        let newGame = confirm("Restart?");
+        if (newGame) {
+            startGame();
+        }
+}
+startGame();
+
+    </script>
+    
+</body>
+</html>
